@@ -78,11 +78,10 @@ const closeConfirmation = (no) => {
     } else if(no === 1) {
         toast.add({ severity: 'info', summary: 'Confirmed', detail: 'You have accepted', life: 3000 });
         displayConfirmation.value = false;
-        user.unsetUser();
-        // const authCookie = useCookie('userStore')
-        // authCookie.value = null
-        // return navigateTo('/auth/login');
-        // router.push('/auth/login');
+
+        const authCookie = useCookie('userStore')
+        authCookie.value = null
+        window.location = '/auth/login'
     }
 };
 
